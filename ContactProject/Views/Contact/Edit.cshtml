@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+@model ContactProject.ViewModel.ContactViewModelList
+
+<h2>Edit Contact Information</h2>
+
+<div align="center" width="500px">
+    @using (Html.BeginForm("Edit", "Contact", FormMethod.Post))
+    {
+        <table class="table" width="400" cellpadding="20">
+            <tr class="btn-default">
+                <td>@Html.LabelFor(model => model.contactModelList.FName) </td>
+                <td>@Html.EditorFor(model => model.contactModelList.FName) </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.contactModelList.LName) </td>
+                <td>@Html.EditorFor(model => model.contactModelList.LName) </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.contactModelList.Email) </td>
+                <td>@Html.EditorFor(model => model.contactModelList.Email) </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.contactModelList.PhoneNum) </td>
+                <td>@Html.EditorFor(model => model.contactModelList.PhoneNum) </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.contactModelList.Status) </td>
+                <td>@Html.EditorFor(model => model.contactModelList.Status) </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Save" /> &nbsp; <a class="btn-primary" href="@Url.Action("Index","Contact")"> Back </a>
+                    @Html.HiddenFor(model => model.contactModelList.SNo)
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+
